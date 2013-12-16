@@ -25,7 +25,7 @@ class ThreeAndFive
  
 }
 
-$example=new ThreeAndFive(1000);
-echo $example->threeAndFive();
+// $example=new ThreeAndFive(1000);
+// echo $example->threeAndFive();
 
 ?>

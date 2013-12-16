@@ -13,10 +13,40 @@ class FibEvenTest extends PHPUnit_Framework_TestCase
       unset($this->example);
   }
   
-  public function testFibShouldReturnOneGivenOne()
+  public function testFibShouldReturnZeroGivenOne()
   {
     $this->example=new FibEven(1);
-    $this->assertEquals(1, $this->example->fib());
+    $this->assertEquals(0, $this->example->fib());
+  }
+  
+  public function testFibShouldReturnOneGivenTwo()
+  {
+      $this->example=new FibEven(2);
+      $this->assertEquals(1, $this->example->fib());
+  }
+  
+  public function testFibShouldReturnOneGivenThree()
+  {
+      $this->example=new FibEven(3);
+      $this->assertEquals(1, $this->example->fib());
+  }
+  
+  public function testFibShouldReturnTwoGivenFour()
+  {
+      $this->example=new FibEven(4);
+      $this->assertEquals(2, $this->example->fib());
+  }
+  
+  public function testSummationShouldNotAddOddNumbers()
+  {
+      $this->example=new FibEven(2);
+      $this->assertEquals(0, $this->example->summation());
+  }
+  
+  public function testSummationShouldAddEvenNumbers()
+  {
+      $this->example=new FibEven(4);
+      $this->assertEquals(2, $this->example->summation());
   }
   
 }
