@@ -49,6 +49,20 @@ class FibEvenTest extends PHPUnit_Framework_TestCase
       $this->assertEquals(2, $this->example->summation());
   }
   
+  public function testSetUpperLimitFunction()
+  {
+      $this->example=new FibEven(4);
+      $this->example->setUpperLimit(100);
+      $this->assertEquals(100, $this->example->getUpperLimit());
+  }
+  
+  public function testIfUpperLimitSetSummationGoesToLimitInsteadOfSetNumberOfTerms()
+  {
+      $this->example=new FibEven(4);
+      $this->example->setUpperLimit(100);
+      $this->assertEquals(44, $this->example->summation());
+  }
+  
 }
 
 ?>
